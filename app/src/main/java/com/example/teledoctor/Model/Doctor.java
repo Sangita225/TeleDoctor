@@ -11,9 +11,10 @@ private String lastname;
     private String experience;
     private String email;
     private String password;
-    private String details;
 
-    public Doctor(String firstname, String lastname, String address, String phone, String gender, String clinic, String speciality, String experience, String email, String password, String details) {
+    private String image;
+
+    public Doctor(String firstname, String lastname, String address, String phone, String gender, String clinic, String speciality, String experience, String email, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;
@@ -24,7 +25,7 @@ private String lastname;
         this.experience = experience;
         this.email = email;
         this.password = password;
-        this.details = details;
+
     }
 
     public String getFirstname() {
@@ -107,11 +108,11 @@ private String lastname;
         this.password = password;
     }
 
-    public String getDetails() {
-        return details;
+    public String getImage() {
+        return image;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

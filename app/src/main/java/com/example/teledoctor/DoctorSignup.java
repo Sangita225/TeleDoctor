@@ -1,27 +1,114 @@
 package com.example.teledoctor;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.content.CursorLoader;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.example.teledoctor.API.API;
+import com.example.teledoctor.Model.Doctor;
+import com.example.teledoctor.ServerResponse.ImageResponse;
+import com.example.teledoctor.ServerResponse.SignupResponse;
+import com.example.teledoctor.StrictMode.StrictModeClass;
+import com.example.teledoctor.URL.Url;
+
+import java.io.File;
+import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DoctorSignup extends AppCompatActivity {
+    private EditText etlname, etaddress, etphone, etclinic, etspeciality, etexperience, etemail, etpassword;
+    private EditText etfname;
+    private ImageView profile;
+    //   Spinner gender;
+    private String imagePath;
+    private String imageName = "";
+    private EditText Mygender;
+    private Button signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_doctor_signup );
 
+        etfname = findViewById( R.id.dfname );
+        etlname = findViewById( R.id.dlname );
+        etaddress = findViewById( R.id.daddress );
+        etphone = findViewById( R.id.dphone );
+        etclinic = findViewById( R.id.dclinic );
+        etspeciality = findViewById( R.id.dsepeciality );
+        etexperience = findViewById( R.id.dexperience );
+        etemail = findViewById( R.id.demail );
+        etpassword = findViewById( R.id.dpassword );
+        Mygender = findViewById( R.id.spinnergender );
+        //Mygender= gender.getSelectedItem().toString();
+        signup = findViewById( R.id.btnsignup );
+        profile = findViewById( R.id.imgprofile );
 
 
+        signup.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signup();
+            }
+        } );
     }
 
 
+    private void signup() {
+        String fname = etfname.getText().toString();
+        String lname = etlname.getText().toString();
+        String address = etaddress.getText().toString();
+        String phone = etphone.getText().toString();
+        String clinic = etclinic.getText().toString();
+        String speciality = etspeciality.getText().toString();
+        String experience = etexperience.getText().toString();
+        String email = etemail.getText().toString();
+        String password = etpassword.getText().toString();
+        String gender = Mygender.getText().toString();
+
+        Doctor doctor = new Doctor( fname, lname, address, phone, gender, clinic, speciality, experience, email, password );
+        API doctorAPI = Url.getInstance().create( API.class );
+        Call<SignupResponse> responseCall = doctorAPI.registerdoctor( doctor );
+
+        responseCall.enqueue( new Callback<SignupResponse>() {
+            @Override
+            public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
+
+                if (!response.isSuccessful()) {
+                    Toast.makeText(DoctorSignup.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(DoctorSignup.this, "Registered", Toast.LENGTH_SHORT).show();
+            }
 
 
+            @Override
+            public void onFailure(Call<SignupResponse> call, Throwable t) {
+                Toast.makeText(DoctorSignup.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        } );
 
+
+}
 
 }
