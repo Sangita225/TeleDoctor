@@ -14,7 +14,8 @@ private String lastname;
 
     private String image;
 
-    public Doctor(String firstname, String lastname, String address, String phone, String gender, String clinic, String speciality, String experience, String email, String password) {
+    public Doctor(String image, String firstname, String lastname, String address, String phone, String gender, String clinic, String speciality, String experience, String email, String password) {
+        this.image = image;
         this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;

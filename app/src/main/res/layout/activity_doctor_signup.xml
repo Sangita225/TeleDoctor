@@ -97,7 +97,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <EditText
+        <Spinner
             android:id="@+id/spinnergender"
             android:layout_width="136dp"
             android:layout_height="37dp"
@@ -107,8 +107,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/dphone"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.238"/>
-<!--            android:entries="@array/gender"-->
+            app:layout_constraintVertical_bias="0.238"
+            android:entries="@array/gender"
             />
 
 
