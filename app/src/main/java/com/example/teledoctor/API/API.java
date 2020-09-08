@@ -1,6 +1,8 @@
 package com.example.teledoctor.API;
 
 import com.example.teledoctor.Model.Doctor;
+import com.example.teledoctor.Model.Patients;
+import com.example.teledoctor.Patient;
 import com.example.teledoctor.ServerResponse.ImageResponse;
 import com.example.teledoctor.ServerResponse.SignupResponse;
 
@@ -20,5 +22,7 @@ public interface API {
     @POST("doctors/register")
     Call<SignupResponse> registerdoctor(@Body Doctor doctor);
 
+    @POST("patients/register")
+    Call<SignupResponse> registerpatient(@Body Patients patient);
 
 }

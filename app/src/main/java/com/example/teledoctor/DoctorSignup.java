@@ -115,6 +115,7 @@ public class DoctorSignup extends AppCompatActivity {
         cursor.close();
         return result;
     }
+
     private void saveImageOnly() {
         File file = new File(imagePath);
         RequestBody requestBody = RequestBody.create( MediaType.parse("multipart/form-data"), file);
@@ -145,6 +146,7 @@ public class DoctorSignup extends AppCompatActivity {
         String experience = etexperience.getText().toString();
         String email = etemail.getText().toString();
         String password = etpassword.getText().toString();
+
 
 
         Doctor doctor = new Doctor( imageName,fname, lname, address, phone, Mygender, clinic, speciality, experience, email, password );
