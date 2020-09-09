@@ -11,12 +11,12 @@ public class Patients {
     private String password;
     private Boolean checked;
 
-    public Patients(String firstname, String lastname, String address, String age, String phone, String gender, String email, String password) {
+    public Patients(String firstname, String lastname, String address, String age, String gender, String email, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.address = address;
         this.age = age;
-        this.phone = phone;
+
         this.gender = gender;
         this.email = email;
         this.password = password;

@@ -37,7 +37,7 @@ public class Patient extends AppCompatActivity {
         etfname=findViewById( R.id.etpfname );
         etlname=findViewById( R.id.etpplname );
         etaddress=findViewById( R.id.etpaddress );
-        etphone=findViewById( R.id.etphone );
+//        etphone=findViewById( R.id.etphone );
         etage=findViewById( R.id.etpage );
         etemail=findViewById( R.id.etpemail );
         etpassword=findViewById( R.id.etpatientpassword );
@@ -63,10 +63,10 @@ public class Patient extends AppCompatActivity {
         String lname= etlname.getText().toString();
         String address= etaddress.getText().toString();
         String age=etage.getText().toString();
-        String phone= etphone.getText().toString();
+//        String phone= etphone.getText().toString();
         String email= etemail.getText().toString();
         String password=etpassword.getText().toString();
-        Patients patients=new Patients( fname,lname,address,age,phone,mygender,email,password );
+        Patients patients=new Patients( fname,lname,address,age,mygender,email,password );
 
         API patientAPI = Url.getInstance().create( API.class );
         Call<SignupResponse> responseCall = patientAPI.registerpatient( patients );

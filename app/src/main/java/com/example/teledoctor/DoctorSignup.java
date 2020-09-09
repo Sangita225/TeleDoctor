@@ -140,7 +140,7 @@ public class DoctorSignup extends AppCompatActivity {
         String fname = etfname.getText().toString();
         String lname = etlname.getText().toString();
         String address = etaddress.getText().toString();
-        String phone = etphone.getText().toString();
+//        String phone = etphone.getText().toString();
         String clinic = etclinic.getText().toString();
         String speciality = etspeciality.getText().toString();
         String experience = etexperience.getText().toString();
@@ -149,7 +149,7 @@ public class DoctorSignup extends AppCompatActivity {
 
 
 
-        Doctor doctor = new Doctor( imageName,fname, lname, address, phone, Mygender, clinic, speciality, experience, email, password );
+        Doctor doctor = new Doctor( imageName,fname, lname, address,  Mygender, clinic, speciality, experience, email, password );
         API doctorAPI = Url.getInstance().create( API.class );
         Call<SignupResponse> responseCall = doctorAPI.registerdoctor( doctor );
 

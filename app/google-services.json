@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1008837823810",
+    "firebase_url": "https://teledoctor-6683b.firebaseio.com",
+    "project_id": "teledoctor-6683b",
+    "storage_bucket": "teledoctor-6683b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008837823810:android:fbb3dcfe9d671f3ed94cdb",
+        "android_client_info": {
+          "package_name": "com.example.teledoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008837823810-r3msp9fqt3gkamgnumrc54jnq09mq9ms.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teledoctor",
+            "certificate_hash": "c836aaa48e5308f71bc54cfb1d666c7fd2917cdb"
+          }
+        },
+        {
+          "client_id": "1008837823810-sk2ovmoaqtqd1t1qs7nlnu15u529uvii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8bOsp-Dm6-tDEAFjg5rOtOAWowVFti6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008837823810-sk2ovmoaqtqd1t1qs7nlnu15u529uvii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
